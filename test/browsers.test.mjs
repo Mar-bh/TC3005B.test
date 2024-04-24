@@ -15,7 +15,7 @@ describe('search', async function () {
         // Automate DuckDuckGo search
         await driver.get('https://duckduckgo.com/');
         const searchBox = await driver.findElement(
-            By.id('search_form_input_homepage'));
+             By.xpath('//*[@id="searchbox_input"]'));
         await searchBox.sendKeys(term, Key.ENTER);
 
         // Wait until the result page is loaded
@@ -70,36 +70,36 @@ describe('search', async function () {
     // Our test definitions
     it('should search for "Selenium dev"', function (done) {
         return search('Selenium dev').then(content => {
-        assert.isTrue(content.includes('www.selenium.dev'));
-        done();
+            assert.isTrue(content.includes('www.selenium.dev'));
+            done();
         });
     });
 
     it('should search for "Appium"', function (done) {
         return search('Appium').then(content => {
-        assert.isTrue(content.includes('appium.io'));
-        done();
+            assert.isTrue(content.includes('appium.io'));
+            done();
         });
     });
 
-    it('should search for "Mozilla"',  function (done) {
+    it('should search for "Mozilla"', function (done) {
         return search('Mozilla').then(content => {
-        assert.isTrue(content.includes('mozilla.org'));
-        done();
+            assert.isTrue(content.includes('mozilla.org'));
+            done();
         });
     });
 
-    it('should search for "GitHub"',  function (done) {
+    it('should search for "GitHub"', function (done) {
         return search('GitHub').then(content => {
-        assert.isTrue(content.includes('github.com'));
-        done();
+            assert.isTrue(content.includes('github.com'));
+            done();
         });
     });
 
     it('should search for "GitLab"', function (done) {
         return search('GitLab').then(content => {
-        assert.isTrue(content.includes('gitlab.com'));
-        done();
+            assert.isTrue(content.includes('gitlab.com'));
+            done();
         });
     });
 });
