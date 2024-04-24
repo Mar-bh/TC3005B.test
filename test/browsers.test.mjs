@@ -68,33 +68,38 @@ describe('search', async function () {
     });
 
     // Our test definitions
-    it('should search for "Selenium dev"', async function (done) {
-        const content = await search('Selenium dev');
+    it('should search for "Selenium dev"', function (done) {
+        return search('Selenium dev').then(content => {
         assert.isTrue(content.includes('www.selenium.dev'));
         done();
+        });
     });
 
-    it('should search for "Appium"', async function (done) {
-        const content = await search('Appium');
+    it('should search for "Appium"', function (done) {
+        return search('Appium').then(content => {
         assert.isTrue(content.includes('appium.io'));
         done();
+        });
     });
 
-    it('should search for "Mozilla"', async function (done) {
-        const content = await search('Mozilla');
+    it('should search for "Mozilla"',  function (done) {
+        return search('Mozilla').then(content => {
         assert.isTrue(content.includes('mozilla.org'));
         done();
+        });
     });
 
-    it('should search for "GitHub"', async function (done) {
-        const content = await search('GitHub');
+    it('should search for "GitHub"',  function (done) {
+        return search('GitHub').then(content => {
         assert.isTrue(content.includes('github.com'));
         done();
+        });
     });
 
-    it('should search for "GitLab"', async function (done) {
-        const content = await search('GitLab');
+    it('should search for "GitLab"', function (done) {
+        return search('GitLab').then(content => {
         assert.isTrue(content.includes('gitlab.com'));
         done();
+        });
     });
 });
