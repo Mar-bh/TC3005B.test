@@ -68,28 +68,33 @@ describe('search', async function () {
     });
 
     // Our test definitions
-    it('should search for "Selenium dev"', async function () {
+    it('should search for "Selenium dev"', async function (done) {
         const content = await search('Selenium dev');
         assert.isTrue(content.includes('www.selenium.dev'));
+        done();
     });
 
-    it('should search for "Appium"', async function () {
+    it('should search for "Appium"', async function (done) {
         const content = await search('Appium');
         assert.isTrue(content.includes('appium.io'));
+        done();
     });
 
-    it('should search for "Mozilla"', async function () {
+    it('should search for "Mozilla"', async function (done) {
         const content = await search('Mozilla');
         assert.isTrue(content.includes('mozilla.org'));
+        done();
     });
 
-    it('should search for "GitHub"', async function () {
+    it('should search for "GitHub"', async function (done) {
         const content = await search('GitHub');
         assert.isTrue(content.includes('github.com'));
+        done();
     });
 
-    it('should search for "GitLab"', async function () {
+    it('should search for "GitLab"', async function (done) {
         const content = await search('GitLab');
         assert.isTrue(content.includes('gitlab.com'));
+        done();
     });
 });
